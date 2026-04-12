@@ -47,6 +47,53 @@ nav a {
     transition: 0.3s;
 }
 
+.resume-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* PROFILE CARD */
+.profile-card {
+    text-align: center;
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 15px;
+    width: 220px;
+    transition: 0.3s;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(131,140,229,0.4);
+}
+
+.profile-card img {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 3px solid var(--accent);
+    box-shadow: 0 0 20px rgba(131,140,229,0.6);
+}
+
+/* NAME */
+.profile-card h3 {
+    margin-top: 10px;
+    color: var(--light);
+}
+
+/* ROLE */
+.profile-card p {
+    font-size: 0.9rem;
+    color: var(--accent);
+}
+
+/* RESUME TEXT */
+.resume-content {
+    flex: 1;
+}
+
 nav a:hover {
     color: var(--accent);
 }
@@ -98,6 +145,42 @@ h2 {
     color: var(--light);
 }
 
+.hero {
+    height: 100vh;
+    background: url('cover.jpg') center/cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top:80px; /* 👈 add this */
+}
+
+/* DARK OVERLAY FOR READABILITY */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(13, 6, 24, 0.7);
+}
+
+/* CONTENT ABOVE IMAGE */
+.hero-overlay {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    text-shadow: 0 0 10px rgba(131,140,229,0.8);
+}
+
+.hero p {
+    margin-top: 10px;
+    color: var(--accent);
+}
+
 /* CARDS */
 .card {
     background: rgba(255,255,255,0.05);
@@ -134,6 +217,7 @@ footer {
 <!-- NAVBAR -->
 <nav>
     <a href="#about">About</a>
+    <a href="#resume">Resume</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#achievements">Achievements</a>
@@ -144,18 +228,18 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
-    <h1 contenteditable="true">Ayush Ashok Borkar</h1>
-    <p contenteditable="true">
-        Exploring the intersection of Engineering, Research, and Astronomy
-    </p>
-    <button class="btn" onclick="scrollToSection()">View Work</button>
+    <div class="hero-overlay">
+        <h1>Ayush Ashok Borkar</h1>
+        <p>Building towards Research, Astronomy & Scientific Computing</p>
+        <button class="btn" onclick="scrollToSection()">View Work</button>
+    </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
     <h2>About Me</h2>
     <div class="card">
-        <p contenteditable="true">
+        <p>
             I am a Chemical Engineering undergraduate at MIT Academy of Engineering, Pune, 
             with a strong interest in research and astronomy. I am currently building my 
             skills in Python and analytical thinking to apply them in scientific fields.
@@ -163,14 +247,141 @@ footer {
     </div>
 </section>
 
+<!-- RESUME -->
+<section id="resume">
+    <h2>Resume</h2>
+    <div class="resume-container">
+
+            <!--PROFILE-->
+            <div class="profile-card">
+                <img src="profile.jpg" alt="Ayush Borkar">
+                <h3>Ayush Ashok Borkar</h3>
+                <p>Chemical Engineering Student</p>
+            </div>
+
+            <!--RESUME CONTENT-->
+            <div class="card">
+                <!-- HEADER -->
+                <h3>Ayush Ashok Borkar</h3>
+                <p>
+                    Chemical Engineering Student | Aspiring Researcher
+                </p>
+
+                <p>
+                    📧 stylecentral.og@gmail.com <br>
+                </p>
+
+                <hr style="margin:20px 0; opacity:0.2;">
+
+                <!-- SUMMARY -->
+                <h3>Summary</h3>
+                <p
+                    Chemical Engineering undergraduate with a strong interest in research, astronomy, and materials science. Currently building foundational skills in Python, data analysis, and scientific problem-solving. <br> 
+                    Actively exploring the application of computational tools in scientific research, with the goal of pursuing advanced studies and contributing to research in space-related fields.
+                </p>
+
+                <hr style="margin:20px 0; opacity:0.2;">
+
+                <!-- EDUCATION -->
+                <h3>Education</h3>
+                <p>
+                    B.Tech in Chemical Engineering <br>
+                    MIT Academy of Engineering, Pune <br>
+                    Expected Graduation: 2029 <br>
+                </p><br>
+
+                <p><strong>Relevant Coursework:</strong></p>
+                
+                    Thermodynamics<br>
+                    Heat Transfer<br>
+                    Material Science<br>
+                    Fluid Mechanics<br>
+                
+                </p><br>    
+
+                <hr style="margin:20px 0; opacity:0.2;">
+
+                <!-- PROJECTS -->
+                <h3>Projects</h3>
+
+                <p>
+                    ⭐ <strong>Student Data Analysis using Python</strong>
+                    
+                    Processed structured datasets using CSV files<br>
+                    Performed basic data analysis and output generation<br>
+                    Built foundational skills in data handling<br>
+                
+                    Tools: Python    
+                </p><br>
+
+                <p>
+                    ⭐ <strong>Numerical Computation using NumPy</strong>
+                    
+                    Applied basic numerical operations using NumPy<br>
+                    Developed understanding of efficient data handling<br>
+                    
+                    Tools: Python, NumPy    
+                </p><br>
+
+                <p>
+                    ⭐ <strong>(Upcoming) Star Brightness Analysis</strong>
+                    
+                    Planning to simulate and visualize variations in stellar brightness<br>
+                    Aims to apply basic computational methods to astronomy-related data<br>
+                    
+                    Tools: Python, NumPy, Matplotlib, AstroPy    
+                </p><br>
+
+                <hr style="margin:20px 0; opacity:0.2;">
+
+                <!-- SKILLS -->
+                <h3>Skills</h3>
+
+                <p><strong>Technical Skills:</strong></p>
+                
+                    Python (Basic)</li>
+                    Engineering Fundamentals<br>
+                    Data Handling (CSV,NumPy)<br>
+                
+                </p><br>
+
+                <p><strong>Tools & Platforms:</strong></p>
+                
+                    GitHub<br>
+                    MS Excel<br>
+                
+                </p><br>
+
+                <p><strong>Core Strengths:</strong></p>
+                
+                    Analytical Thinking<br>
+                    Problem Solving<br>
+                    Research-Oriented Approach<br>
+                
+                </p><br>    
+                <hr style="margin:20px 0; opacity:0.2;">
+
+                <!-- CERTIFICATIONS -->
+                <h3>Certifications & Achievements</h3>
+                <p>
+                    🏆 Department Competition – Gold Medal <br>
+            
+                    Secured 1st place in a departmental competition<br>
+                    Awarded Certificate of Appreciation and A Gold Medal by Head of Department<br>
+            
+                </p><br>
+            </div>        
+    </div>
+</section>
+
 <!-- INTERESTS -->
 <section>
     <h2>Areas of Interest</h2>
     <div class="grid">
-        <div class="card" contenteditable="true">Stellar Astronomy</div>
-        <div class="card" contenteditable="true">Space Phenomena</div>
-        <div class="card" contenteditable="true">Scientific Research</div>
-        <div class="card" contenteditable="true">Computational Science</div>
+        <div class="card">Stellar Astronomy</div>
+        <div class="card">Space Phenomena</div>
+        <div class="card">Scientific Research</div>
+        <div class="card">Computational Science</div>
     </div>
 </section>
 
@@ -178,10 +389,10 @@ footer {
 <section id="skills">
     <h2>Skills</h2>
     <div class="grid">
-        <div class="card" contenteditable="true">Basic Python</div>
-        <div class="card" contenteditable="true">Analytical Thinking</div>
-        <div class="card" contenteditable="true">Article Writing</div>
-        <div class="card" contenteditable="true">NumPy & CSV</div>
+        <div class="card">Basic Python</div>
+        <div class="card">Analytical Thinking</div>
+        <div class="card">Article Writing</div>
+        <div class="card">NumPy & CSV</div>
     </div>
 </section>
 
@@ -190,15 +401,15 @@ footer {
     <h2>Projects</h2>
     <div class="grid">
         <div class="card">
-            <h3 contenteditable="true">Student Data Analysis (Python)</h3>
-            <p contenteditable="true">
+            <h3  >Student Data Analysis (Python)</h3>
+            <p>
                 Processed structured datasets using CSV files and performed basic analysis. 
                 Built foundational skills relevant to scientific data handling.
             </p>
         </div>
         <div class="card">
-            <h3 contenteditable="true">NumPy Computation</h3>
-            <p contenteditable="true">
+            <h3  >NumPy Computation</h3>
+            <p>
                 Applied numerical computing techniques using NumPy. 
                 Developed an understanding of efficient data processing.
             </p>
@@ -210,8 +421,8 @@ footer {
 <section id="achievements">
     <h2>Achievements</h2>
     <div class="card">
-        <h3 contenteditable="true">Gold Medal – Department Competition</h3>
-        <p contenteditable="true">
+        <h3  >Gold Medal – Department Competition</h3>
+        <p>
             Secured first place in an official departmental competition organized by the college. 
             Worked as part of a team of three and was awarded a Gold Medal along with a Certificate 
             of Appreciation by the Head of Department.
@@ -226,16 +437,16 @@ footer {
     <div class="grid">
 
         <div class="card">
-            <h3 contenteditable="true">NASSCOM Digital 101</h3>
-            <p contenteditable="true">
+            <h3  >NASSCOM Digital 101</h3>
+            <p  >
                 A certificate of proof that I've learned Digital IBM Skills namely- AI,IoT, Blockchain, Data Analysis, etc.
             </p>
             <a href=https://drive.google.com/file/d/16gjiAEO7O-KGGjSpNy7eD9COhfxU1Tq_/view?usp=sharing target="_blank">View Certificate</a>
         </div>
 
         <div class="card">
-            <h3 contenteditable="true">Python Essentials</h3>
-            <p contenteditable="true">
+            <h3  >Python Essentials</h3>
+            <p  >
                 Certicate earned to showcase profficiency in basic python skills.
             </p>
             <a href=https://drive.google.com/drive/folders/1CD4IfFN3RBrpV03eozLUyXYjftmEkbv8?usp=sharing target="_blank">View Certificate</a>
@@ -248,7 +459,7 @@ footer {
 <section id="learning">
     <h2>Learning & Exploration</h2>
     <div class="card">
-        <p contenteditable="true">
+        <p  >
             Currently exploring concepts in astronomy such as stellar behavior, variable stars, 
             and space phenomena. Developing an understanding of how computational tools like Python 
             can be applied in scientific research and data analysis.
@@ -260,7 +471,7 @@ footer {
 <section>
     <h2>Upcoming Work</h2>
     <div class="card">
-        <p contenteditable="true">
+        <p  >
             Working on developing a Python-based project related to scientific or astronomical data analysis.
         </p>
     </div>
@@ -270,7 +481,7 @@ footer {
 <section id="contact">
     <h2>Contact</h2>
     <div class="card">
-        <p contenteditable="true">Email: stylecentral.og@gmail.com</p>
+        <p  >Email: stylecentral.og@gmail.com</p>
     </div>
 </section>
 
